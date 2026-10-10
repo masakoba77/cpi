@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>日本 コアコアCPI チャート</title>
+  <style>
+    :root {
+      --bg: #f3f6f8;
+      --ink: #1a2330;
+      --muted: #5a6a7a;
+      --accent: #0b6e4f;
+      --line: #d5dee6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #d9ebe3 0%, transparent 55%),
+        radial-gradient(900px 400px at 100% 0%, #dce7f2 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    header {
+      padding: 2.5rem 1.25rem 1.25rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: 0.02em;
+    }
+    .lede { color: var(--muted); max-width: 42rem; }
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .meta strong { color: var(--accent); font-weight: 700; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+      display: grid;
+      gap: 2rem;
+    }
+    section h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+    section p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1.25rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>日本 コアコアCPI</h1>
+    <p class="lede">総務省統計局の消費者物価指数から、コアコア（生鮮食品及びエネルギーを除く総合）の前年同月比と主要な寄与度分解を可視化しています。</p>
+    <p class="meta">最新月: <strong>2026-08</strong> ／ コアコア前年同月比: <strong>1.93%</strong></p>
+  </header>
+  <main>
+    <section>
+      <h2>コアコアCPI 前年同月比</h2>
+      <p>生鮮食品及びエネルギーを除く総合の前年同月比（バー）。</p>
+      <img src="core_core_cpi_bars.png" alt="コアコアCPI前年同月比" />
+    </section>
+    <section>
+      <h2>10大費目の寄与度（積み上げ）</h2>
+      <p>総合に対する10大費目の寄与度近似（ウエイト×各費目前年同月比）。</p>
+      <img src="cpi_contrib_major10_stacked.png" alt="10大費目寄与度" />
+    </section>
+    <section>
+      <h2>コア寄与の近似（積み上げ）</h2>
+      <p>生鮮食品を除く食料とエネルギー色の薄い費目を中心にしたコア寄与の近似分解。</p>
+      <img src="cpi_contrib_core_items_stacked.png" alt="コア品目寄与度近似" />
+    </section>
+  </main>
+  <footer>
+    出典: <a href="https://www.stat.go.jp/data/cpi/">総務省統計局 消費者物価指数</a> ／
+    系列データ: <a href="cpi_series.csv">cpi_series.csv</a>
+  </footer>
+</body>
+</html>
